@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.waimin.Klynn_Sushi_Shop'
+    namespace 'com.myohtet.Barcode_Printer'
     defaultConfig {
-        applicationId 'com.waimin.Klynn_Sushi_Shop'
+        applicationId 'com.myohtet.Barcode_Printer'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 10

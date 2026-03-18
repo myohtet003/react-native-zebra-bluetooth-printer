@@ -1,8 +1,8 @@
-package com.waimin.Klynn_Sushi_Shop
+package com.myohtet.Barcode_Printer
 
 import android.app.Application
 import android.content.res.Configuration
-import com.waimin.Klynn_Sushi_Shop.printer.PrinterPackage
+import com.myohtet.Barcode_Printer.printer.PrinterPackage
 
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication

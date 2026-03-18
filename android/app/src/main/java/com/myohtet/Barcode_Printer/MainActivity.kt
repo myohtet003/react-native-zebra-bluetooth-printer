@@ -1,4 +1,4 @@
-package com.waimin.Klynn_Sushi_Shop
+package com.myohtet.Barcode_Printer
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

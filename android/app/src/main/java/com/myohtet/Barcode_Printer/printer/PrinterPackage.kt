@@ -1,4 +1,4 @@
-package com.waimin.Klynn_Sushi_Shop.printer
+package com.myohtet.Barcode_Printer.printer
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule

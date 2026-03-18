@@ -13,17 +13,35 @@ It includes:
 
 ---
 
+## 🚀 Features
+
+- ✅ Zebra Bluetooth BLE printing
+- ✅ LAN printing support
+- ✅ Print ZPL (barcode labels)
+- ✅ Base64 printing support
+- ✅ Printer status checking
+- ✅ Event listeners (connected / disconnected / status)
+
+---
+
 ## 📂 Folder Structure
 
+```
 ZebraPrinterModule/
 ├── android/
-│ ├── app/
-│ │ ├── libs/ <- Zebra SDK .jar files go here
-│ │ └── src/
-│ │ └── main/
-│ │ └── java/com/myname/zebraprinter/printer/PrinterModule.kt
+│   ├── app/
+│   │   ├── libs/                          <- Zebra SDK .jar files go here
+│   │   └── src/
+│   │       └── main/
+│   │           └── java/com/myohtet/Barcode_Printer/
+│   │               ├── printer/
+│   │               │   ├── PrinterModule.kt
+│   │               │   └── PrinterPackage.kt
+│   │               ├── MainActivity.kt
+│   │               └── MainApplication.kt
 ├── README.md
 └── .gitignore
+```
 
 ---
 
@@ -36,16 +54,18 @@ ZebraPrinterModule/
 3. Add this dependency in `android/app/build.gradle` if not already present:
 
 ```gradle
-implementation files('libs/ZebraSDK.jar')
+implementation fileTree(dir: "libs", include: ["*.jar"])
+```
 
-⚠️ This module works only on Android because Zebra SDK is native.
+> ⚠️ This module works only on Android because the Zebra SDK is Android-native.
 
 ---
 
-🔌 Usage
+## 🔌 Usage
 
 Import the module in your React Native JS/TS code:
 
+```js
 import { NativeModules, NativeEventEmitter } from "react-native";
 const { PrinterModule } = NativeModules;
 
@@ -114,33 +134,19 @@ PrinterModule.disconnect()
 printerEmitter.addListener("printer_status", status => console.log("Printer status event:", status));
 printerEmitter.addListener("printer_connected", type => console.log("Printer connected event via:", type));
 printerEmitter.addListener("printer_disconnected", () => console.log("Printer disconnected event"));
-
----
-
-📝 Notes
-
-Make sure the printer is paired via Bluetooth or accessible via LAN before printing.
-
-BLE connections use chunked data with small delays for stable printing.
-
-The module emits events for printer status, connection, and disconnection.
 ```
 
 ---
 
-🔗 References
+## 📝 Notes
 
-Zebra Android SDK ([text](https://www.zebra.com/us/en/support-downloads/software/scanner-software/scanner-sdk-for-android.html))
+- Make sure the printer is paired via Bluetooth or accessible via LAN before printing.
+- BLE connections use chunked data with small delays for stable printing.
+- The module emits events for printer status, connection, and disconnection.
 
-React Native Native Modules
+---
 
-```markdown
-## 🚀 Features
+## 🔗 References
 
-- ✅ Zebra Bluetooth BLE printing
-- ✅ LAN printing support
-- ✅ Print ZPL (barcode labels)
-- ✅ Base64 printing support
-- ✅ Printer status checking
-- ✅ Event listeners (connected / disconnected / status)
-```
+- [Zebra Android SDK](https://www.zebra.com/us/en/support-downloads/software/scanner-software/scanner-sdk-for-android.html)
+- [React Native Native Modules](https://reactnative.dev/docs/native-modules-android)
